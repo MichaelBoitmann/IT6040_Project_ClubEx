@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
-    path('clubexapp/', include('clubexapp.urls')),
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls), #admin page
+    path('clubexapp/', include('clubexapp.urls')), #landing page
+    path('accounts/', include('django.contrib.auth.urls')), #login
 ]
