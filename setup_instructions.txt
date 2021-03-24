@@ -1,0 +1,21 @@
+open command prompt
+
+1. Clone repo 
+git clone https://github.com/MichaelBoitmann/IT6040_Project_ClubEx.git
+
+2. go into IT6040_project_clubex folder
+cd IT6040_project_clubex
+
+3. Activate virtual environment
+clubexvenv\Scripts\activate
+
+4. Install django
+pip install django
+
+5. go into clubexproject folder
+cd clubexproject
+
+6. start web server
+python manage.py runserver
+
+
