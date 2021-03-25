@@ -1,4 +1,4 @@
-open command prompt
+##open command prompt
 
 1. Clone repo 
 git clone https://github.com/MichaelBoitmann/IT6040_Project_ClubEx.git
