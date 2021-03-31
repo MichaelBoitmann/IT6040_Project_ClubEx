@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'accounts.apps.AccountsConfig',
+    'accounts',
     'clubexapp.apps.ClubexappConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -68,6 +68,8 @@ TEMPLATES = [
         },
     },
 ]
+
+AUTH_USER_MODEL = "accounts.Account"
 
 WSGI_APPLICATION = 'clubexproject.wsgi.application'
 
