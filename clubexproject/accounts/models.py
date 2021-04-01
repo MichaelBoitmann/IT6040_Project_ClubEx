@@ -38,9 +38,12 @@ class MyAccountManager(BaseUserManager):
 class Account(AbstractBaseUser):
     ANNUALLY="12 Months"
     MONTHLY="1 Month"
+    UNSUBSCRIBED = "No active subscription"
     SUBSCRIPTION_CHOICES = [
         (ANNUALLY, "12 Months: $100"),
         (MONTHLY, "1 Month: $10"),
+        (UNSUBSCRIBED, "No active subscription")
+
     ]
     username = models.CharField(max_length=30, unique=True)
     first_name = models.CharField(max_length=30)
@@ -53,9 +56,9 @@ class Account(AbstractBaseUser):
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
     subscription = models.CharField(
-        max_length=15,
+        max_length=50,
         choices = SUBSCRIPTION_CHOICES,
-        default=ANNUALLY,
+        default=UNSUBSCRIBED,
         )
 
     USERNAME_FIELD='username'
