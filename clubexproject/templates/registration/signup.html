@@ -8,8 +8,8 @@
 </div>
 
 <div class="d-flex justify-content-center">
-  <form method="post">
-    {% csrf_token %}
+  <form method="post">{% csrf_token %}
+    {{form.as_p}}
     {% for field in registration_form %}
 
       {{ field.label_tag}}
@@ -20,10 +20,10 @@
       {% endif %}
 
       {% for error in field.errors %}
-        <small style="color: red;"> {{ errors }}</small>
-      {% endif %}
+        <p style="color: red;"> {{ error }}</p>
+      {% endfor %}
 
-
+    {% endfor %}
     {{form.as_p}}
     <button class="btn btn-outline-primary" type="submit">Sign Up</<button>
   </form>
