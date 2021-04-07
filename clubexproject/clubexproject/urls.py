@@ -17,8 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from django.views.generic.base import TemplateView
+from clubexapp.views import AboutPageView
 
 urlpatterns = [
+    path('about/', AboutPageView.as_view(), name='about'),
     path('admin/', admin.site.urls), #admin page
     path('accounts/', include('accounts.urls')), #signup
     path('accounts/', include('django.contrib.auth.urls')), #login
