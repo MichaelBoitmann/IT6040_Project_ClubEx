@@ -11,13 +11,30 @@
     <title>{% block title %}Club Ex!{% endblock %}</title>
   </head>
   <body>
-    <main>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/">ClubEx</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <main>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">ClubEx</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        {% if user.is_authenticated %}
+          <a href="{% url 'logout' %}">Log Out</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'about' %}">About</a>
+            </li>
+          </ul>
+          Hi {{ user.username }}!
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-primary" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  {% else %}
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
@@ -30,6 +47,7 @@
             <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
           </li>
         </ul>
+        You are not logged in
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-primary" type="submit">Search</button>
@@ -37,14 +55,11 @@
       </div>
     </div>
   </nav>
-  {% block content %}
-  {% if user.is_authenticated %}
-    Hi {{ user.username }}!
-    <p><a href="{% url 'logout' %}">Log Out</a></p>
-  {% else %}
-    <p>You are not logged in</p>
   {% endif %}
-  {% endblock %}
+  {% block content %}
+  {% endblock content %}
+
+
 
     <!-- Optional JavaScript; choose one of the two! -->
 
