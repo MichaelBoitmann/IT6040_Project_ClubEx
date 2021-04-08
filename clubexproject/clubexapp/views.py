@@ -6,6 +6,3 @@ class HomePageView(TemplateView):
 
 class AboutPageView(TemplateView):
     template_name = 'about.html'
-
-class ProgramsPageView(TemplateView):
-    template_name = 'programs.html'
