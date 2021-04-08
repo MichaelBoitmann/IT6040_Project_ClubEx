@@ -1,4 +1,5 @@
 from django.contrib import admin
-from .models import Exercise
+from django.contrib.auth.admin import UserAdmin
+from .models import Program
 
-admin.site.register(Exercise)
+admin.site.register(Program)
