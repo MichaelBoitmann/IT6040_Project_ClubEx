@@ -1,3 +1,43 @@
 {% extends 'base.html' %}
 
+{% load embed_video_tags %}
 {% block title %} Home {% endblock %}
+
+{% block content %}
+<!-- {% if user.is_authenticated %} -->
+<div class="d-flex flex-wrap">
+    {% for item in videos %}
+    <div class="px-3 mb-5">
+        {% video item.url '426x240' %}
+        <div class="d-flex justify-content-start">
+            {{ item.title }}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+<!-- <div class="d-flex flex-column justify-content-center"> -->
+<!-- <h2>Boxing</h2> -->
+<!-- <iframe width="420" height="315" src="https://www.youtube.com/embed/jCTEVKRTuS8"></iframe> -->
+<!-- placeholder video, replace with database objects -->
+<!--  -->
+<!-- <h2>Yoga</h2> -->
+<!-- <iframe width="420" height="315" src="https://www.youtube.com/embed/4pKly2JojMw"></iframe> -->
+<!-- placeholder video, replace with database objects -->
+<!--  -->
+<!-- <h2>Pilates</h2> -->
+<!-- <iframe width="420" height="315" src="https://www.youtube.com/embed/i1AIqSvfnWQ"></iframe> -->
+<!-- placeholder video, replace with database objects -->
+<!--  -->
+<!-- <h2>Aerobics</h2> -->
+<!-- <iframe width="420" height="315" src="https://www.youtube.com/embed/a44ayeoSfKM"></iframe> -->
+<!-- placeholder video, replace with database objects -->
+<!-- </div> -->
+
+{%else%}
+<div class="container-fluid pt-1">
+    <h3>Sign up with ClubEx and get access to several videos for each of our training programs</h3>
+</div>
+{% endif %}
+{% endblock %}

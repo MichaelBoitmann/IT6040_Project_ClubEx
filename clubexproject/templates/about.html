@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+<!-- the code for about page starts as below -->
+
+{% block title %} About {% endblock %}
+<!-- ======= About Section ======= -->
+{% block content %}
+<section id="about" class="about section-bg">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+            <!-- <h2>About Us</h2> -->
+            <h3>... it's about you and your well-being</span></h3>
+            <p> We support people on their health journeys</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6" data-aos="zoom-out" data-aos-delay="100">
+                <img src="{% static 'images/gym.jpg' %}" class="img-fluid rounded-3" alt="image will follow">
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up"
+                data-aos-delay="100">
+                <h3>Clube Ex is New Zealand's largest integrated health, fitness and physiotherapy rehabilitation
+                    provider.</h3>
+                <p class="font-italic">
+                    An extensive range of specialized health, fitness, and personal welfare services along with a
+                    comprehensive
+                    national footprint, allows Clube Ex to optimize the health and well-being of Kiwis at home, in the
+                    workplace, or at one of more than 80 locations.
+                </p>
+                <ul>
+                    <li>
+                        <i class="bx bx-store-alt"></i>
+                        <div>
+                            <h5>All workouts are scientifically designed to get results.</h5>
+                            <p>We have a range of qualified instrcutors and nutricionist to help you achieve your goals
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="bx bx-images"></i>
+                        <div>
+                            <h5>Virtual Classes Available</h5>
+                            <p>No equipment is needed to start - choose workouts with or without weights and other
+                                exercise equipment.</p>
+                        </div>
+                    </li>
+                </ul>
+                <p>
+                    World-class instructors motivate and push you through every workout.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section><!-- End About Section -->
+{% endblock %}

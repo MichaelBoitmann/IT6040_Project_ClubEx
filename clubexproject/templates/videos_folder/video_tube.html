@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% load embed_video_tags %}
+
+
+{% block content %}
+
+<h1 class="mb-5">Django Training Videos</h1>
+
+<div class="d-flex flex-wrap">
+    {% for item in videos %}
+
+    <div class="px-3 mb-5">
+        {% video item.url '426x315' %}
+        <div class="d-flex justify-content-center">
+            <p class="text-truncate">
+                {{ item.title }}
+            </p>
+        </div>
+    </div>
+    {% endfor%}
+</div>
+
+{% endblock content %}

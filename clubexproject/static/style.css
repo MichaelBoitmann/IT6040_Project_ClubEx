@@ -1,0 +1,9 @@
+body{
+    background-color: turquoise;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 400px;
+    height: 400px;
+    border: 2px dashed #333;
+}
