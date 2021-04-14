@@ -1,21 +1,26 @@
 ##open command prompt
 
 1. Clone repo 
-git clone https://github.com/MichaelBoitmann/IT6040_Project_ClubEx.git
+    >git clone https://github.com/MichaelBoitmann/IT6040_Project_ClubEx.git
 
-2. go into IT6040_project_clubex folder
-cd IT6040_project_clubex
+2. Go into IT6040_project_clubex folder
+    >cd IT6040_project_clubex
 
 3. Activate virtual environment
-clubexvenv\Scripts\activate
+for window based PC ">clubexvenv\Scripts\activate"
+for mac based PC ">clubexvenv/bin/activate"
 
 4. Install django
-pip install django
+    > pip install django==3.1.7 (be aware of the version as you might install
+                                latest version that will not work on this project)
 
-5. go into clubexproject folder
-cd clubexproject
+5. Go into clubexproject folder
+    >cd clubexproject
 
-6. start web server
-python manage.py runserver
+6. Start web server where the file "manage.py" is present
+    >python manage.py runserver
+
+7. Run the command below to install the Django embed video 
+    >pip install django-embed-video
 
 
