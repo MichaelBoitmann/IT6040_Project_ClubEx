@@ -7,8 +7,8 @@
     >cd IT6040_project_clubex
 
 3. Activate virtual environment
-for window based PC ">clubexvenv\Scripts\activate"
-for mac based PC ">clubexvenv/bin/activate"
+    for window based PC ">clubexvenv\Scripts\activate"
+    for mac based PC ">clubexvenv/bin/activate"
 
 4. Install django
     > pip install django==3.1.7 (be aware of the version as you might install
