@@ -7,8 +7,9 @@
 {% if user.is_authenticated %}
 <h1 class="mb-5">Django Training Videos</h1>
 
-<div class="d-flex flex-wrap">
-    {% for item in videos %}
+<h2>Aerobics</h2>
+  <div class="d-flex flex-wrap">
+    {% for item in videos  %}
 
     <div class="px-3 mb-5">
         {% video item.url '426x315' %}
@@ -19,10 +20,10 @@
         </div>
     </div>
     {% endfor%}
-</div>
+  </div>
 {% else %}
 <div class="container-fluid pt-1">
-    <h3>Sign up with ClubEx and get access to several videos for each of our training programs</h3>
+    <h4>Sign up with ClubEx and get access to several videos for each of our training programs</h4>
 </div>
 {% endif %}
 
