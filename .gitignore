@@ -110,3 +110,4 @@ clubexproject/accounts/__pycache__/forms.cpython-39.pyc
 clubexproject/accounts/__pycache__/forms.cpython-39.pyc
 clubexproject/accounts/__pycache__/forms.cpython-39.pyc
 *.pyc
+*.sqlite3
