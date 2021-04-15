@@ -4,7 +4,7 @@
 
 
 {% block content %}
-
+{% if user.is_authenticated %}
 <h1 class="mb-5">Django Training Videos</h1>
 
 <div class="d-flex flex-wrap">
@@ -20,5 +20,10 @@
     </div>
     {% endfor%}
 </div>
+{% else %}
+<div class="container-fluid pt-1">
+    <h3>Sign up with ClubEx and get access to several videos for each of our training programs</h3>
+</div>
+{% endif %}
 
 {% endblock content %}

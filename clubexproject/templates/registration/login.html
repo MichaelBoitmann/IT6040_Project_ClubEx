@@ -9,7 +9,7 @@
 
 <div class="d-flex justify-content-center">
   <form method="post">
-    {%csrf_token %}
+    {% csrf_token %}
     {{form.as_p}}
     <button class="btn btn-outline-primary" type="submit">Log in</<button>
   </form>

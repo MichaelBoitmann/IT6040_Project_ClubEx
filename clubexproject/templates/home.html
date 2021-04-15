@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
 {% load embed_video_tags %}
-{% block title %} Home {% endblock %}
+{% block title %} Home {% endblock title %}
 
 {% block content %}
-<!-- {% if user.is_authenticated %} -->
+{% if user.is_authenticated %}
 <div class="d-flex flex-wrap">
     {% for item in videos %}
     <div class="px-3 mb-5">
@@ -14,7 +14,10 @@
         </div>
     </div>
     {% endfor %}
+<p>sd;lfkjsldkfjsldkfjlskdjf</p>
 </div>
+
+
 
 
 <!-- <div class="d-flex flex-column justify-content-center"> -->
@@ -35,9 +38,10 @@
 <!-- placeholder video, replace with database objects -->
 <!-- </div> -->
 
-{%else%}
+{% else %}
 <div class="container-fluid pt-1">
     <h3>Sign up with ClubEx and get access to several videos for each of our training programs</h3>
+    <p>sldkfjslkdfjsldkdfjl</p>
 </div>
 {% endif %}
-{% endblock %}
+{% endblock content%}
