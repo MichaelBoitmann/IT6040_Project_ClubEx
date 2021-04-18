@@ -18,6 +18,7 @@ class CustomerPageView(TemplateView):
 
 def video_index(request):
     videos = Video.objects.all()
+
     return render(request, 'videos_folder/video_tube.html', context={'videos': videos})
 
 #@login_required
