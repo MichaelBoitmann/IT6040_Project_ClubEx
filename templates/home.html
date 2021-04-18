@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% load embed_video_tags %}
+{% block title %} Home {% endblock title %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<div class="d-flex flex-wrap">
+    {% for item in videos %}
+    <div class="px-3 mb-5">
+        {% video item.url '426x240' %}
+        <div class="d-flex justify-content-start">
+            {{ item.title }}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+
+<!-- <div class="d-flex flex-column justify-content-center"> -->
+<!-- <h2>Boxing</h2> -->
+<!-- <iframe width="420" height="315" src="https://www.youtube.com/embed/jCTEVKRTuS8"></iframe> -->
+<!-- placeholder video, replace with database objects -->
+<!--  -->
+<!-- <h2>Yoga</h2> -->
+<!-- <iframe width="420" height="315" src="https://www.youtube.com/embed/4pKly2JojMw"></iframe> -->
+<!-- placeholder video, replace with database objects -->
+<!--  -->
+<!-- <h2>Pilates</h2> -->
+<!-- <iframe width="420" height="315" src="https://www.youtube.com/embed/i1AIqSvfnWQ"></iframe> -->
+<!-- placeholder video, replace with database objects -->
+<!--  -->
+<!-- <h2>Aerobics</h2> -->
+<!-- <iframe width="420" height="315" src="https://www.youtube.com/embed/a44ayeoSfKM"></iframe> -->
+<!-- placeholder video, replace with database objects -->
+<!-- </div> -->
+
+{% else %}
+
+
+<div class="row">
+    <div class="col-lg-6" data-aos="zoom-out" data-aos-delay="100">
+        <img src="{% static 'images/fitness.jpg' %}" class="img-fluid rounded-3" alt="image will follow">
+    </div>
+    <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up"
+        data-aos-delay="100">
+        <h3>For full access to Clube Ex benefits Sign up and get access to several videos for each of our training programs.</h3>
+        <p class="font-italic">
+            Exercise strengthens your heart and improves your circulation. 
+            The increased blood flow raises the oxygen levels in your body. 
+            This helps lower your risk of heart diseases such as high cholesterol, coronary artery disease, and heart attack. 
+            Regular exercise can also lower your blood pressure and triglyceride levels.
+        </p>
+        <ul>
+            <li>
+                <i class="bx bx-store-alt"></i>
+                <div>
+                    <h5>Your wellbeing is our priority</h5>
+                </div>
+            </li>
+            <li>
+                <i class="bx bx-images"></i>
+                <div>
+                    <h5>Exercices can make you feel happier</h5>
+                    <p>Increase your energy levels, improve your brain health and memory, Join now and be part of the best fitness 
+                    gym in Aotearoa
+                    </p>
+                </div>
+            </li>
+        </ul>
+        <p>
+            We are waiting for us, contact us today and start to make the changes to your wellbeing.
+        </p>
+    </div>
+</div>
+
+
+{% endif %}
+{% endblock content%}

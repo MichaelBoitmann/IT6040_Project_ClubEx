@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% load embed_video_tags %}
+
+
+{% block content %}
+{% if user.is_authenticated %}
+<h1 class="mb-5">ClubEx Training Videos</h1>
+
+
+<h2>Aerobics</h2>
+<div class="d-flex flex-wrap">
+    {% for item in videos %}
+    {% if item.category_id == 3 %}
+    <div class="px-3 mb-5">
+        {% video item.url '426x315' %}
+        <div class="d-flex justify-content-center">
+            <p class="text-truncate">
+                {{ item.title }}
+            </p>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor%}
+</div>
+
+<h2>Boxing</h2>
+<div class="d-flex flex-wrap">
+    {% for item in videos %}
+    {% if item.category_id == 1 %}
+    <div class="px-3 mb-5">
+        {% video item.url '426x315' %}
+        <div class="d-flex justify-content-center">
+            <p class="text-truncate">
+                {{ item.title }}
+            </p>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor%}
+</div>
+
+<h2>Pilates</h2>
+<div class="d-flex flex-wrap">
+    {% for item in videos %}
+    {% if item.category_id == 4 %}
+    <div class="px-3 mb-5">
+        {% video item.url '426x315' %}
+        <div class="d-flex justify-content-center">
+            <p class="text-truncate">
+                {{ item.title }}
+            </p>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor%}
+</div>
+
+<h2>Yoga</h2>
+<div class="d-flex flex-wrap">
+    {% for item in videos %}
+    {% if item.category_id == 2 %}
+    <div class="px-3 mb-5">
+        {% video item.url '426x315' %}
+        <div class="d-flex justify-content-center">
+            <p class="text-truncate">
+                {{ item.title }}
+            </p>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor%}
+</div>
+{% else %}
+
+<div class="row">
+    <div class="col-lg-6" data-aos="zoom-out" data-aos-delay="100">
+        <img src="{% static 'images/fitness.jpg' %}" class="img-fluid rounded-3" alt="image will follow">
+    </div>
+    <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up"
+        data-aos-delay="100">
+        <h3>For full access to Clube Ex benefits Sign up and get access to several videos for each of our training
+            programs.</h3>
+        <p class="font-italic">
+            Exercise strengthens your heart and improves your circulation.
+            The increased blood flow raises the oxygen levels in your body.
+            This helps lower your risk of heart diseases such as high cholesterol, coronary artery disease, and heart
+            attack.
+            Regular exercise can also lower your blood pressure and triglyceride levels.
+        </p>
+        <ul>
+            <li>
+                <i class="bx bx-store-alt"></i>
+                <div>
+                    <h5>Your wellbeing is our priority</h5>
+                </div>
+            </li>
+            <li>
+                <i class="bx bx-images"></i>
+                <div>
+                    <h5>Exercices can make you feel happier</h5>
+                    <p>Increase your energy levels, improve your brain health and memory, Join now and be part of the
+                        best fitness
+                        gym in Aotearoa
+                    </p>
+                </div>
+            </li>
+        </ul>
+        <p>
+            We are waiting for us, contact us today and start to make the changes to your wellbeing.
+        </p>
+    </div>
+</div>
+{% endif %}
+
+{% endblock content %}
