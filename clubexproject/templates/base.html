@@ -30,14 +30,20 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'about' %}">About Us</a>
+                            <a class="nav-link" href="{% url 'about' %}">
+                                <h4>About Us</h4>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'video' %}">Videos</a>
+                            <a class="nav-link" href="{% url 'video' %}">
+                                <h4>Videos</h4>
+                            </a>
                         </li>
                     </ul>
-                    Hi {{ user.first_name }} !
-                    <a href="{% url 'logout' %}">Log Out</a>
+                    <div>
+                        Hi {{ user.first_name }} !
+                        <a href="{% url 'logout' %}">Log Out</a>
+                    </div>
                     <form class="d-flex">
                         <input class="form-control me-2" type=" search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-primary" type="submit"> Search </button>
