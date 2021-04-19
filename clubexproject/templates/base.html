@@ -35,9 +35,20 @@
                     </ul>
                     Hi {{ user.first_name }} !
                     <a href="{% url 'logout' %}">Log Out</a>
-                    <form class="d-flex">
-                        <input class="form-control me-2" type=" search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-primary" type="submit"> Search </button>
+                    <form class="d-flex" method="POST" action = "{% url 'search' %}">
+                      {% csrf_token %}
+
+                        <input list="common_searches" class="form-control me-2" type="search" placeholder="Search Exercies" aria-label="Search" name="searched">
+                        <datalist id = "common_searches">
+                          <option value ="boxing">
+                          <option value ="yoga">
+                          <option value ="aerobics">
+                          <option value ="pilates">
+                          <option value ="beginner">
+                          <option value ="intermediate">
+                          <option value ="expert">
+                          </datalist>
+                        <button class="btn btn-outline-primary" type="submit">Search</button>
                     </form>
                 </div>
             </div>

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load embed_video_tags %}
+
+{% block content %}
+{% if searched %}
+  <h1 class="mb-5">Showing results for {{ searched }} ...</h1>
+
+  {% for e in exercise_search %}
+  <br>  {{ e }} - {{e.category}}</br>
+    {% video e.url '426x315' %}
+  {% endfor %}
+{%else%}
+  <h1>Please enter something in the search bar</h1>
+
+{% endif %}
+
+{% endblock content %}
