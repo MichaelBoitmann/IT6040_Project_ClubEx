@@ -3,6 +3,7 @@
 
 {% block content %}
 {% if searched %}
+<<<<<<< HEAD
   <h1 class="mb-5">Showing results for {{ searched }} ...</h1>
 
   {% for e in exercise_search %}
@@ -15,3 +16,17 @@
 {% endif %}
 
 {% endblock content %}
+=======
+<h1 class="mb-5">Showing results for {{ searched }} ...</h1>
+{% for e in exercise_search %}
+<br> {{ e }} - {{e.category}}</br>
+<br>{% video e.url '426x315' %}</br>
+
+{% endfor %}
+{%else%}
+<h1>Please enter something in the search bar</h1>
+
+{% endif %}
+</div>
+{% endblock content %}
+>>>>>>> e759482e812aebb63574ca50337c7b8b5eab7265
