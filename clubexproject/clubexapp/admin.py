@@ -4,6 +4,7 @@ from .models import Video, Category
 
 from embed_video.admin import AdminVideoMixin
 
+
 class CategoryAdmin(admin.ModelAdmin):
     def save_model(self, request, obj, form, change):
         obj.added_by = request.user
@@ -11,12 +12,13 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 class AdminVideo(AdminVideoMixin, admin.ModelAdmin):
-        list_display = ('title', 'category',)
-        search_fields = ('title', 'category',)
+    list_display = ('id', 'category', 'title')
+    search_fields = ('category', 'title',)
 
-        filter_horizontal = ()
-        list_filter = ()
-        fieldsets = ()
+    filter_horizontal = ()
+    list_filter = ()
+    fieldsets = ()
+
 
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Video, AdminVideo)
