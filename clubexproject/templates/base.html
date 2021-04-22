@@ -15,11 +15,9 @@
 </head>
 
 <body>
-<<<<<<< HEAD
-    <main>
-=======
+    =
     <main class="container-fluid">
->>>>>>> origin/edit-1
+        1
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="/">
@@ -33,8 +31,7 @@
                 {% if user.is_authenticated %}
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-<<<<<<< HEAD
+                        <li class="nav-item">D
                             <a class="nav-link" href="{% url 'about' %}">
                                 <h4>About Us</h4>
                             </a>
@@ -52,29 +49,29 @@
                     <form class="d-flex">
                         <input class="form-control me-2" type=" search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-primary" type="submit"> Search </button>
-=======
-                            <a class="nav-link" href="{% url 'about' %}">About Us</a>
-                        </li>
-                    </ul>
-                    Hi {{ user.first_name }} !
-                    <a href="{% url 'logout' %}">Log Out</a>
-                    <form class="d-flex" method="POST" action="{% url 'search' %}">
-                        {% csrf_token %}
 
-                        <input list="common_searches" class="form-control me-2" type="search"
-                            placeholder="Search Exercies" aria-label="Search" name="searched">
-                        <datalist id="common_searches">
-                            <option value="boxing">
-                            <option value="yoga">
-                            <option value="aerobics">
-                            <option value="pilates">
-                            <option value="beginner">
-                            <option value="intermediate">
-                            <option value="expert">
-                        </datalist>
-                        <button class="btn btn-outline-primary" type="submit">Search</button>
->>>>>>> origin/edit-1
-                    </form>
+                        <a class="nav-link" href="{% url 'about' %}">About Us</a>
+                        </li>
+                        </ul>
+                        Hi {{ user.first_name }} !
+                        <a href="{% url 'logout' %}">Log Out</a>
+                        <form class="d-flex" method="POST" action="{% url 'search' %}">
+                            {% csrf_token %}
+
+                            <input list="common_searches" class="form-control me-2" type="search"
+                                placeholder="Search Exercies" aria-label="Search" name="searched">
+                            <datalist id="common_searches">
+                                <option value="boxing">
+                                <option value="yoga">
+                                <option value="aerobics">
+                                <option value="pilates">
+                                <option value="beginner">
+                                <option value="intermediate">
+                                <option value="expert">
+                            </datalist>
+                            <button class="btn btn-outline-primary" type="submit">Search</button>
+
+                        </form>
                 </div>
             </div>
         </nav>

@@ -1,9 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/edit-1
 from .models import Video
 
 
@@ -21,11 +18,6 @@ class CustomerPageView(TemplateView):
 
 def video_index(request):
     videos = Video.objects.all()
-<<<<<<< HEAD
-    return render(request, 'videos_folder/video_tube.html', context={'videos': videos})
-
-=======
-
     return render(request, 'videos_folder/video_tube.html', context={'videos': videos})
 
 
@@ -49,4 +41,3 @@ def search(request):
 #     featured = category_exercise[0]
 #     categories = Category.objects.all().order_by('category_name')
 #     return render(request, 'exercise.html', {'category_exercise':category_exercise, 'categories':categories, 'featured':featured})
->>>>>>> origin/edit-1
