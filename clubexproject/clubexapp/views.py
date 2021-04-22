@@ -20,15 +20,16 @@ def video_index(request):
 
     return render(request, 'videos_folder/video_tube.html', context={'videos': videos})
 
+
 def search(request):
     if request.method == 'POST':
         searched = request.POST['searched']
         exercise_search = Video.objects.filter(title__contains=searched)
-        return render(request, 'search.html', context={'searched':searched, 'exercise_search':exercise_search})
+        return render(request, 'search.html', context={'searched': searched, 'exercise_search': exercise_search})
     else:
         return render(request, 'search.html', context={})
 
-#@login_required
+# @login_required
 # #def category(request, pk):
 #     ca_exercise = Exercise.objects.filter(category=pk).order_by('exercise_name')
 #     categories = Category.objects.all().order_by('category_name')
